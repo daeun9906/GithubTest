@@ -9,3 +9,6 @@ print("Test Github")
 # 왼쪽의 지하철 노선 같은 거 사용
 # Commit and Push
 print("Test 2 ")
+
+# 잘 되는 건가
+print("test3")
