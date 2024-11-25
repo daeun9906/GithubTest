@@ -33,6 +33,10 @@ class GoogleTransApp(QMainWindow, form_class):
         # 초기화
         self.resetButton.clicked.connect(self.transReset)
 
+        # 번역기 호출
+        self.trans = googletrans.Translator()
+        
+
 
     # 번역 메소드 생성
     def transExectue(self):
@@ -44,7 +48,7 @@ class GoogleTransApp(QMainWindow, form_class):
 
         else:
             # 번역 객체 생성
-            trans = googletrans.Translator()
+            trans = googletrans.Translator()  # 구글 번역 객체 생성
             resultEng = trans.translate(korEdit, dest="en")
             resultJa = trans.translate(korEdit, dest="ja")
 
