@@ -24,6 +24,24 @@ class GoogleTransApp(QMainWindow, form_class):
         self.statusBar().showMessage("Google Translator v1.0")
 
 
+        # 번역
+        self.transButton.clicked.connect(self.transExectue)
+
+
+    # 번역 메소드 생성
+    def transExectue(self):
+        korEdit = self.korEdit.text()      # 해당 line edit에 입력된 텍스트 호출
+
+
+        # # 번역 객체 생성
+        trans = googletrans.Translator()
+        resultEng = trans.translate(korEdit, dest="en")
+        resultJa = trans.translate(korEdit, dest="ja")
+
+
+        self.engTrans.append(resultEng.text)
+        self.jaTrans.append(resultJa.text)
+
 
 app = QApplication(sys.argv)
 
